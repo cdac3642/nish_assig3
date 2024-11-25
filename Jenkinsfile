@@ -7,7 +7,7 @@ pipeline {
             }
         }
 }
- stage('Run Hello ') {
+stage('Run Hello ') {
             steps {
                 script {
                     
