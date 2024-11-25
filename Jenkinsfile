@@ -6,8 +6,7 @@ pipeline {
               checkout scm
             }
         }
-}
-stage('Run Hello ') {
+   stage('Run Hello ') {
             steps {
                 script {
                     
@@ -15,6 +14,7 @@ stage('Run Hello ') {
                 }
             }
         }
+}
 post {
          success {
               echo 'Build  successfully .'
