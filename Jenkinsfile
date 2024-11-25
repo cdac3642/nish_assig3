@@ -1,5 +1,8 @@
 pipeline {
      agent any
+   environment {
+         DOCKER_IMAGE = 'hello-python:latest' //dokcer image name
+ }
    stages {
      stage('Checkout') {
          steps {
@@ -14,6 +17,15 @@ pipeline {
                 }
             }
         }
+   stage('Build') {
+       steps {
+            sh """
+            docker build -t $DOCKER_IMAGE .
+              """
+        }
+    }
+
+
 }
 post {
          success {
